@@ -17,12 +17,7 @@ services:
     image: mysql:8.0.25
     ports:
       - "3306:3306"
-    networks:
-      - proxynet
     environment:
       MYSQL_ROOT_PASSWORD: 123456
     volumes:
       - /usr/local/docker/mysql:/var/lib/mysql
-  networks:
-    proxynet:
-      name: custom_network
