@@ -18,11 +18,11 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - bridge_net
+      - proxynet
     environment:
       MYSQL_ROOT_PASSWORD: 123456
     volumes:
       - /usr/local/docker/mysql:/var/lib/mysql
   networks:
-    bridge_net:
+    proxynet:
       name: custom_network
