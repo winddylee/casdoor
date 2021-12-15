@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.5'
 services:
   casdoor:
     build:
@@ -17,7 +17,12 @@ services:
     image: mysql:8.0.25
     ports:
       - "3306:3306"
+    networks:
+      - bridge_net
     environment:
       MYSQL_ROOT_PASSWORD: 123456
     volumes:
       - /usr/local/docker/mysql:/var/lib/mysql
+  networks:
+    bridge_net:
+      name: custom_network
